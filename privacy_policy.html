@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Body Battery</title>
+  <style>
+    :root {
+      --bg:       #0D0B1E;
+      --surface:  #18143A;
+      --card:     #1E1A40;
+      --purple:   #6B4FF8;
+      --red:      #C0183A;
+      --green:    #48C78E;
+      --white:    #FFFFFF;
+      --muted:    #A99FD4;
+      --text:     #D8D4F0;
+      --border:   #2E2860;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(160deg, #1A1240 0%, #0D0B1E 60%);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .logo-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--purple), var(--red));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+
+    .logo-name {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+
+    header h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    header p.subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 20px;
+      background: rgba(72, 199, 142, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(72,199,142,0.3);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .toc h2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+    }
+
+    .toc li {
+      margin-bottom: 6px;
+    }
+
+    .toc a {
+      color: var(--purple);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.15s;
+    }
+
+    .toc a:hover { color: #9B8BFF; }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 52px;
+    }
+
+    section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h2 .icon {
+      font-size: 20px;
+    }
+
+    section p {
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    section ul, section ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+
+    section li {
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    /* ── Highlight cards ── */
+    .highlight {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--purple);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight.green  { border-left-color: var(--green); }
+    .highlight.red    { border-left-color: var(--red); }
+
+    .highlight p { margin: 0; font-size: 15px; }
+    .highlight strong { color: var(--white); }
+
+    /* ── Table ── */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    thead {
+      background: var(--surface);
+    }
+
+    th {
+      text-align: left;
+      padding: 14px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+    td:first-child { color: var(--white); font-weight: 500; }
+
+    /* ── Contact ── */
+    .contact-card {
+      background: linear-gradient(135deg, #1A1240, #120E30);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      background: var(--purple);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 32px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.15s;
+    }
+
+    .contact-card a:hover { background: #5A3EE0; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a { color: var(--purple); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────────────────── -->
+<header>
+  <div class="logo-row">
+    <div class="logo-icon">⚡</div>
+    <span class="logo-name">Body Battery</span>
+  </div>
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">We built Body Battery on a simple principle: your health data belongs to you, and only you.</p>
+  <span class="badge">✓ No data ever leaves your device</span>
+</header>
+
+<!-- ── Main ────────────────────────────────────────────────────────────────── -->
+<main>
+
+  <!-- Effective date -->
+  <p style="color: var(--muted); font-size: 14px; margin-bottom: 40px;">
+    <strong style="color:var(--white)">Effective date:</strong> March 24, 2026 &nbsp;·&nbsp;
+    <strong style="color:var(--white)">Last updated:</strong> March 24, 2026
+  </p>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Data We Access</a></li>
+      <li><a href="#data-not-collected">Data We Never Collect</a></li>
+      <li><a href="#how-we-use">How We Use Your Data</a></li>
+      <li><a href="#third-parties">Third Parties</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#your-rights">Your Rights</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Overview -->
+  <section id="overview">
+    <h2><span class="icon">🔒</span> 1. Overview</h2>
+    <p>Body Battery ("the App", "we", "our") is a health and wellness application for iPhone and Apple Watch. This Privacy Policy explains what data the App accesses, how it is used, and the protections in place to keep your information private.</p>
+    <div class="highlight green">
+      <p><strong>The short version:</strong> Body Battery reads health data from Apple Health on your device, processes it entirely on-device to compute your energy score, and never transmits your health data to any external server, cloud service, or third party. Ever.</p>
+    </div>
+  </section>
+
+  <!-- 2. Data Collected -->
+  <section id="data-collected">
+    <h2><span class="icon">📊</span> 2. Data We Access</h2>
+    <p>Body Battery requests read-only access to the following Apple HealthKit data types. All data is accessed and processed exclusively on your device.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Why We Use It</th>
+            <th>Stored?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Heart Rate Variability (SDNN)</td>
+            <td>Primary signal for computing your energy and recovery score</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Resting Heart Rate</td>
+            <td>Used to assess recovery and compute personal baseline</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Heart Rate</td>
+            <td>Used to calculate activity drain and stress load</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Sleep Analysis &amp; Stages</td>
+            <td>Sleep quality is the primary recharge mechanism for your battery score</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Active Energy Burned</td>
+            <td>Measures physical activity drain on your battery</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Workout Sessions</td>
+            <td>Used to calculate post-exercise energy cost (TRIMP/EPOC)</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Step Count</td>
+            <td>Contributes to overall daily activity assessment</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>VO2 Max</td>
+            <td>Used to personalise workout intensity calculations where available</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Respiratory Rate</td>
+            <td>Optional signal used to refine overnight recovery scoring</td>
+            <td>On-device only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>You can grant or revoke any of these permissions at any time via <strong>Settings → Privacy &amp; Security → Health → Body Battery</strong> on your iPhone.</p>
+  </section>
+
+  <!-- 3. Data Not Collected -->
+  <section id="data-not-collected">
+    <h2><span class="icon">🚫</span> 3. Data We Never Collect</h2>
+    <p>Body Battery does not collect, store, or transmit:</p>
+    <ul>
+      <li>Your name, email address, or any other personal identifiers</li>
+      <li>Your location or GPS data</li>
+      <li>Any health data to external servers or the cloud</li>
+      <li>Device analytics, crash logs, or usage telemetry</li>
+      <li>Advertising identifiers (IDFA)</li>
+      <li>Any data from your contacts, camera, microphone, or photos</li>
+    </ul>
+    <div class="highlight red">
+      <p><strong>No account required.</strong> Body Battery works without registration. We have no user accounts and no user database.</p>
+    </div>
+  </section>
+
+  <!-- 4. How We Use Data -->
+  <section id="how-we-use">
+    <h2><span class="icon">⚙️</span> 4. How We Use Your Data</h2>
+    <p>All data processing happens locally on your iPhone and Apple Watch. Specifically, the App:</p>
+    <ul>
+      <li>Reads health samples from HealthKit to compute your Body Battery score (0–100)</li>
+      <li>Stores a rolling 30-day history of your scores in local app storage to power trend graphs and personalised baselines</li>
+      <li>Caches your most recent score in a widget extension so it can be displayed on your Home Screen and Lock Screen without opening the App</li>
+      <li>Sends your current score to the Apple Watch companion app over local device communication (never the internet)</li>
+    </ul>
+    <p>None of this data ever leaves your device.</p>
+  </section>
+
+  <!-- 5. Third Parties -->
+  <section id="third-parties">
+    <h2><span class="icon">🤝</span> 5. Third Parties</h2>
+    <p>Body Battery does not integrate any third-party SDKs for analytics, advertising, crash reporting, or data collection.</p>
+
+    <div class="highlight">
+      <p>The App uses <strong>Apple HealthKit</strong> (provided by Apple Inc.) to read health data. Your use of HealthKit is governed by <a href="https://www.apple.com/legal/privacy/" style="color:var(--purple)">Apple's Privacy Policy</a>. Body Battery does not share any HealthKit data with Apple beyond what Apple already has through HealthKit itself.</p>
+    </div>
+
+    <p>There are no advertisements in Body Battery and we do not share your data with advertisers, data brokers, or any other commercial third parties.</p>
+  </section>
+
+  <!-- 6. Children -->
+  <section id="children">
+    <h2><span class="icon">👶</span> 6. Children's Privacy</h2>
+    <p>Body Battery is rated <strong>4+</strong> on the App Store. The App does not knowingly collect any personal data from children under the age of 13. Because Body Battery does not collect any personal data from anyone, it is safe for use by users of all ages under parental supervision.</p>
+  </section>
+
+  <!-- 7. Your Rights -->
+  <section id="your-rights">
+    <h2><span class="icon">⚖️</span> 7. Your Rights</h2>
+    <p>Because Body Battery does not collect or store personal data on any server, there is no data to request, export, or delete from our side. However:</p>
+    <ul>
+      <li><strong>Revoke HealthKit access:</strong> Go to Settings → Privacy &amp; Security → Health → Body Battery and toggle off any data types at any time.</li>
+      <li><strong>Delete local app data:</strong> Deleting the Body Battery app from your iPhone removes all locally stored scores and history from your device.</li>
+      <li><strong>Apple Health data:</strong> Your underlying health data is managed through the Apple Health app. Body Battery has read-only access and cannot modify or delete your health records.</li>
+    </ul>
+    <p>If you are a resident of the European Union (GDPR), California (CCPA), or another jurisdiction with specific privacy rights, those rights are fully satisfied by the above — since we hold no personal data about you.</p>
+  </section>
+
+  <!-- 8. Changes -->
+  <section id="changes">
+    <h2><span class="icon">📝</span> 8. Changes to This Policy</h2>
+    <p>If we make material changes to this Privacy Policy, we will update the effective date at the top of this page and, where appropriate, notify you via an in-app notice.</p>
+    <p>Continued use of Body Battery after any changes constitutes your acceptance of the updated policy. We encourage you to review this page periodically.</p>
+  </section>
+
+  <!-- 9. Contact -->
+  <section id="contact">
+    <h2><span class="icon">✉️</span> 9. Contact Us</h2>
+    <p>If you have any questions or concerns about this Privacy Policy or how Body Battery handles your data, please get in touch.</p>
+    <div class="contact-card">
+      <h3>Questions about your privacy?</h3>
+      <p>We're happy to help. Send us an email and we'll respond within 48 hours.</p>
+      <a href="mailto:privacy@bodybattery.app">privacy@bodybattery.app</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+<footer>
+  <p>© 2026 Body Battery. All rights reserved.</p>
+  <p style="margin-top: 8px;">
+    <a href="#overview">Privacy Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>
