@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Body Battery – Support</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --crimson: #C0123A;
+      --purple:  #481280;
+      --mid:     #7B1F6E;
+      --light-bg: #F9F5FF;
+      --card-bg:  #FFFFFF;
+      --text:     #1A1A2E;
+      --muted:    #5C5C7A;
+      --border:   #E4D9F5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ── HERO ── */
+    header {
+      background: linear-gradient(145deg, var(--crimson) 0%, var(--mid) 50%, var(--purple) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 64px 24px 56px;
+    }
+
+    .icon-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      background: linear-gradient(160deg, var(--crimson), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      font-size: 52px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      opacity: 0.88;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── CONTENT ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--purple);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 2px 12px rgba(72,18,128,0.07);
+    }
+
+    .contact-icon {
+      font-size: 2.4rem;
+      flex-shrink: 0;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--crimson), var(--purple));
+      color: #fff;
+      text-decoration: none;
+      padding: 9px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: opacity 0.15s;
+    }
+
+    .contact-card a:hover { opacity: 0.85; }
+
+    /* ── FAQ ── */
+    .faq { display: flex; flex-direction: column; gap: 12px; }
+
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 6px rgba(72,18,128,0.05);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text);
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "＋";
+      font-size: 1.1rem;
+      color: var(--purple);
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: "－";
+    }
+
+    .faq-body {
+      padding: 0 20px 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ── STEPS ── */
+    .steps { display: flex; flex-direction: column; gap: 14px; }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--crimson), var(--purple));
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .step-body { font-size: 0.97rem; color: var(--muted); }
+    .step-body strong { color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--purple); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 500px) {
+      header h1 { font-size: 1.8rem; }
+      .contact-card { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="icon-wrap">🫀</div>
+    <h1>Body Battery</h1>
+    <p>Apple Watch app support — we're here to help.</p>
+  </header>
+
+  <main>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <p>Have a question, found a bug, or want to leave feedback? Send us an email and we'll get back to you as soon as possible.</p>
+          <a href="mailto:support@bodybattery.app">support@bodybattery.app</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq">
+
+        <details>
+          <summary>Why isn't Body Battery syncing with my Apple Watch?</summary>
+          <div class="faq-body">
+            Make sure your iPhone and Apple Watch are both connected and Bluetooth is enabled. Open the Watch app on your iPhone, navigate to <strong>My Watch → Body Battery</strong>, and confirm the app is installed and set to "Show App on Apple Watch." A restart of both devices usually resolves sync issues.
+          </div>
+        </details>
+
+        <details>
+          <summary>Which Apple Watch models are supported?</summary>
+          <div class="faq-body">
+            Body Battery requires <strong>Apple Watch Series 4 or later</strong> running watchOS 9 or newer, paired with an iPhone running iOS 16 or later.
+          </div>
+        </details>
+
+        <details>
+          <summary>My data doesn't look accurate — what should I check?</summary>
+          <div class="faq-body">
+            Body Battery reads from Apple Health. Go to <strong>Settings → Privacy & Security → Health → Body Battery</strong> on your iPhone and make sure all data categories are enabled. Wearing your watch snugly during activity will also improve sensor accuracy.
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I report a bug or crash?</summary>
+          <div class="faq-body">
+            Please email us at <a href="mailto:support@bodybattery.app" style="color:var(--purple)">support@bodybattery.app</a> with a short description of what happened and, if possible, the steps to reproduce it. Including your iPhone model and iOS version is very helpful.
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I request a refund?</summary>
+          <div class="faq-body">
+            Purchases are processed by Apple. You can request a refund directly through Apple at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener" style="color:var(--purple)">reportaproblem.apple.com</a>.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- RESET STEPS -->
+    <section id="troubleshoot">
+      <h2>Quick Troubleshooting Steps</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body"><strong>Force-quit and reopen</strong> the app on your Apple Watch by pressing the side button, swiping the app card away, then reopening it.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body"><strong>Check Health permissions</strong> — Settings → Privacy & Security → Health → Body Battery — and ensure all categories are allowed.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body"><strong>Restart both devices.</strong> Hold the side button on your Apple Watch and power off your iPhone, then turn them back on.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body"><strong>Reinstall the app</strong> by deleting it from your Watch and reinstalling via the Watch app on your iPhone.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">Still stuck? <strong><a href="mailto:support@bodybattery.app" style="color:var(--purple)">Email us</a></strong> and we'll help you sort it out.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Body Battery &nbsp;·&nbsp; <a href="mailto:support@bodybattery.app">support@bodybattery.app</a></p>
+  </footer>
+
+</body>
+</html>
